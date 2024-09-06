@@ -1,5 +1,5 @@
 from django import forms
-from .models import Evento
+from .models import Evento, Organizador
 
 class EventoForm(forms.ModelForm):
     class Meta:
@@ -11,3 +11,7 @@ class EventoForm(forms.ModelForm):
         if 'Cancelado' in nombre:
             raise forms.ValidationError('El nombre no puede ser "Cancelado".')
         return nombre
+class OrganizadorForm(forms.ModelForm):
+    class Meta:
+        model = Organizador
+        fields = ['nombre']

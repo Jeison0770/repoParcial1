@@ -1,3 +1,4 @@
+<a href="{% url 'index' %}">Volver al inicio</a>
 <h1>Eventos</h1>
 <ul>
     {% for evento in eventos %}
@@ -6,3 +7,4 @@
         <li>No hay eventos</li>
     {% endfor %}
 </ul>
+<a href="{% url 'crear_evento' %}">Crear un nuevo organizador</a>
