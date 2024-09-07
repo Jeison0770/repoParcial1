@@ -70,6 +70,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "MiGestorEventos.wsgi.application"
 
+# MiGestorEventos/settings.py
+
+LOGIN_URL = '/iniciarSesion/'  # URL de inicio de sesión si el usuario no está autenticado
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases

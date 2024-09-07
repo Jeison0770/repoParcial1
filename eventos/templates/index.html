@@ -1,15 +1,20 @@
 <div>
-    <a href="{% url 'crear_evento' %}">Crear un nuevo organizador</a>
+    <a href="{% url 'crear_evento' %}">Crear un nuevo evento</a>
 </div>
 
 <div>
-    <a href="{% url 'lista_eventos' %}">Volver a la lista de organizadores</a>
+    <a href="{% url 'lista_eventos' %}">Lista de eventos</a>
 </div>
 
 <div>
-    <a href="{% url 'crear_organizador' %}">Crear un nuevo organizador</a>
+    <a href="{% url 'organizadorForm' %}">Crear un organizador</a>
 </div>
 
 <div>
-    <a href="{% url 'organizadores' %}">Volver a la lista de organizadores</a>
+    <a href="{% url 'organizadores' %}">Lista de organizadores</a>
 </div>
+{% if user.is_authenticated %}
+    <div>
+        <a href="{% url 'cerrarSesion' %}">Cerrar Sesión</a>
+    </div>
+{% endif %}

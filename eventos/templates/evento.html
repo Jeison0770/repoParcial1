@@ -3,6 +3,7 @@
 <ul>
     {% for evento in eventos %}
         <li>{{ evento.nombre }} - Organizado por {{ evento.organizador.nombre }}</li>
+        <a href="{% url 'editar_evento' evento.pk %}">Editar</a>
     {% empty %}
         <li>No hay eventos</li>
     {% endfor %}
