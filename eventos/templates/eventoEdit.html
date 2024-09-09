@@ -4,11 +4,10 @@
   
   <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}  <!-- Renderiza el formulario en formato de párrafos -->
+    {{ form.as_p }}
     
     <button type="submit">Guardar cambios</button>
   </form>
   
-  <!-- Enlace para volver a la lista de eventos -->
   <a href="{% url 'lista_eventos' %}">Volver a la lista de eventos</a>
 {% endblock %}

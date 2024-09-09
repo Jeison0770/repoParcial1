@@ -27,7 +27,7 @@ def crear_evento(request):
 class organizadoresList(ListView):
     model = Organizador
     template_name = 'organizadores.html'
-    context_object_name = 'organizadores'  # Nombre que se usará en el template para acceder a los organizadores
+    context_object_name = 'organizadores'
 
 
 # Vista para crear un nuevo organizador
@@ -35,7 +35,7 @@ class CrearOrganizador(CreateView):
     model = Organizador
     form_class = OrganizadorForm
     template_name = 'organizadoresForm.html'
-    success_url = reverse_lazy('organizadores')  # Redirige a la lista después de crear
+    success_url = reverse_lazy('organizadores')
 
 @login_required
 def eventoEditar(request, pk):
@@ -58,7 +58,7 @@ def iniciarSesion(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('lista_eventos')  # Redirige después de iniciar sesión correctamente
+                return redirect('lista_eventos')
             else:
                 messages.error(request, 'Nombre de usuario o contraseña incorrectos')
         else:
@@ -83,4 +83,4 @@ def register(request):
     return render(request, 'registro.html', {'form': form})
 def cerrarSesion(request):
     logout(request)
-    return redirect('index')  # Redirige a la página de inicio después de cerrar sesión
+    return redirect('index')
