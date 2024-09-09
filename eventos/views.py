@@ -10,6 +10,7 @@ from .forms import EventoForm, OrganizadorForm, CustomUserCreationForm
 
 def index(request):
     return render(request, 'index.html')
+
 def eventoList(request):
     eventos = Evento.objects.all()
     return render(request, 'evento.html', {'eventos': eventos})
